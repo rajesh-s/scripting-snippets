@@ -1,0 +1,8 @@
+# A subroutine to convert decimal to binary
+sub decimal_to_binary
+{
+  my $str = unpack("B32", pack "N", shift));
+  $number_bits = shift;
+  $str =~ s/^0+(?=\d//; # To remove appended zeroes
+  return $str;
+}
